@@ -138,3 +138,8 @@ Route::get('/test-sos', function () {
 })->middleware('auth');   // sirf logged in user hi form dekh sake
 
 Route::post('/sos/trigger', [SosController::class, 'triggerSOS'])->middleware('auth');
+
+
+Route::get('/healthz', function () {
+    return response()->json(['status' => 'OK'], 200);
+});
